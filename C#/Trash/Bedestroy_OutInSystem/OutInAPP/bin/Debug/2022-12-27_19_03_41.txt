@@ -1,0 +1,2 @@
+System.ArgumentException: PartNo:A1已存在
+   於 OutInAPP.Services.ProductService.Create(ProductViewModel input) 於 C:\Users\User\Desktop\Bowen\Program practise\C#\OutInSystem\OutInAPP\Services\ProductService.cs: 行 21

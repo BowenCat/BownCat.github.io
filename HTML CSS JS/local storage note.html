@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>TodoList</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .todo button {
+            flex-shrink: 0;
+            /* line-height: 1; */
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container pt-3">
+        <div class="input-group mb-3">
+            <input id="newThing" type="text" class="form-control" placeholder="今晚我想做點....">
+            <button class="btn btn-primary" type="button" id="add">新增</button>
+        </div>
+        <ul id="todo-list" class="">
+        </ul>
+    </div>
+
+    <template>
+        <li class="border border-1 p-3 mt-1 d-flex">
+            <div class="input-group mb-3 me-3">
+
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" value="">
+                </div>
+
+                <input type="text" class="form-control">
+            </div>
+
+            <button class="edit btn btn-warning">編輯 </button>
+            <button class="save btn btn-success d-none">保存 </button>
+            <button class="remove btn btn-danger ms-3">刪除 </button>
+
+        </li>
+    </template>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script>
+        //UI Data
+        const template = document.querySelector('template')
+        const ul_todoList = document.querySelector('#todo-list')
+
+        const key = "todoJson"
+        let todoArray = []
+        // 初始化:從localStorage撈資料、刷新畫面
+        // 1.做add事件
+        // 2.做refreshView，讓一開始就能根據資料渲染
+        // 3.做編輯
+        // 4.做刪除保存
+        window.onload = () => {
+            getData()
+            refreshUI()
+        }
+
+        function getData() {
+            let jsonStr = localStorage.getItem(key)
+            if (jsonStr == null) return
+
+            todoArray = JSON.parse(jsonStr)
+        }
+
+        function refreshUI() {//刷新
+            //清空
+            ul_todoList.innerHTML = ""
+            //添加
+            todoArray.forEach((todoObj, index) => {
+                ul_todoList.append(getTodoCard(todoObj, index))
+            })
+        }
+
+        //Add按鈕
+
+        const input_new = document.querySelector('#newThing')
+        const btn_add = document.querySelector('#add')
+
+        btn_add.addEventListener('click', () => {
+            //造obj
+            let todoObj = {
+                isDone: false,
+                text: input_new.value,
+            }
+            
+            //refreshUI() 最無腦 就更新畫面
+            ul_todoList.append(getTodoCard(todoObj, todoArray.length))//效能好些 加一張卡
+
+            //obj納入資料
+            todoArray.push(todoObj)
+            //資料有變=>更新Storage
+            localStorage.setItem(key, JSON.stringify(todoArray))
+            input_new.value=""
+
+
+        })
+        // function getTodoCard({isDone,text}){         物件結構附值
+        //     // let isDone=todoObj.isDone
+        //     // let text=todoObj.text
+        //     let clonContent=template.content.cloneNode(true)
+        // }
+
+        function getTodoCard(todoObj, index) {            
+            let clonContent = template.content.cloneNode(true)
+
+            //tpl 內部UI
+            const ckbox = clonContent.querySelector('input[type="checkbox"]')
+            const input_text = clonContent.querySelector('input[type="text"]')
+            const btn_edit = clonContent.querySelector('.edit')
+            const btn_save = clonContent.querySelector('.save')
+            const btn_remove = clonContent.querySelector('.remove')
+
+            //^UI 資料 都準備好
+            //邏輯v
+            ckbox.checked = todoObj.isDone //setattribute()也可
+            ckbox.disabled = true
+            input_text.value = todoObj.text
+            input_text.disabled = true
+
+            btn_edit.addEventListener('click', edit)
+            btn_save.addEventListener('click', () => {
+                save(
+                    {
+                        isDone: ckbox.checked,
+                        text: input_text.value
+                    }
+                    , index
+                )
+            })
+            
+            btn_remove.addEventListener('click', () => { remove(index) })
+            
+            return clonContent
+            
+            function edit() {
+                // UI解禁
+                ckbox.disabled = false
+                input_text.disabled = false
+                //一藏一現
+                btn_edit.classList.add('d-none')
+                btn_save.classList.remove('d-none')
+                
+            }
+
+        }
+
+        function save(todoObj, index) {
+            //把資料改變，所以需要知道索引值
+            todoArray[index] = todoObj
+            localStorage.setItem(key, JSON.stringify(todoArray))
+
+            // //最無腦 刷新UI
+            refreshUI()
+
+            // //效能好些://必須是local function, 才看得見卡牌內容的UI
+
+            // // UI禁用
+            // ckbox.disabled = true
+            // input_text.disabled = true
+            // //一藏一現
+            // btn_edit.classList.remove('d-none')
+            // btn_save.classList.add('d-none')
+        }
+
+        function remove(index) {
+            //把資料改變，所以需要知道索引值
+            todoArray.splice(index, 1)
+            localStorage.setItem(key, JSON.stringify(todoArray))
+
+            // //最無腦 刷新UI
+            refreshUI()
+
+            // 父.removeChild(卡)//索引值對不上會出問題
+
+
+        }
+        //onload    是 網頁"準備好"
+        //unonload  是 網頁"將關閉"
+        // window.onunload = () => {
+        //     localStorage.setItem(key, JSON, stringify(todoArray))
+        // }//如果有這串，上面的全部的「localStorage.setItem(key,JSON,stringify(todoArray))」都可以移除掉
+
+    </script>
+
+
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

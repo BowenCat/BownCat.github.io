@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "96fb2874-288e-48d2-b8b3-f2d7825b8e4f": {
+      "ProjectGuid": "96fb2874-288e-48d2-b8b3-f2d7825b8e4f",
+      "DisplayName": "OutInputSystem",
+      "ColorIndex": 0
+    },
+    "030b1934-a087-4e4e-ad52-f2b83dd28fc2": {
+      "ProjectGuid": "030b1934-a087-4e4e-ad52-f2b83dd28fc2",
+      "DisplayName": "OutInDataLibrary",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

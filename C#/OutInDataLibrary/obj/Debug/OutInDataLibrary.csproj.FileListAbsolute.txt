@@ -1,0 +1,14 @@
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInSystem\OutInDataLibrary\obj\Debug\OutInDataLibrary.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInSystem\OutInDataLibrary\obj\Debug\OutInDataLibrary.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInSystem\OutInDataLibrary\bin\Debug\OutInDataLibrary.dll.config
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInSystem\OutInDataLibrary\bin\Debug\OutInDataLibrary.dll
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInSystem\OutInDataLibrary\bin\Debug\OutInDataLibrary.pdb
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInSystem\OutInDataLibrary\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInSystem\OutInDataLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInSystem\OutInDataLibrary\bin\Debug\EntityFramework.xml
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInSystem\OutInDataLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInSystem\OutInDataLibrary\bin\Debug\zh-Hant\EntityFramework.resources.dll
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInSystem\OutInDataLibrary\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInSystem\OutInDataLibrary\obj\Debug\OutInDataLibrary.csproj.CopyComplete
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInSystem\OutInDataLibrary\obj\Debug\OutInDataLibrary.dll
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInSystem\OutInDataLibrary\obj\Debug\OutInDataLibrary.pdb

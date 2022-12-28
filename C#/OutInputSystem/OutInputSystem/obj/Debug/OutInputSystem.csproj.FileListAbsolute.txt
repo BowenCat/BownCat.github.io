@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\bin\Debug\OutInputSystem.exe.config
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\bin\Debug\OutInputSystem.exe
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\bin\Debug\OutInputSystem.pdb
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\obj\Debug\OutInputSystem.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\obj\Debug\OutInputSystem.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\obj\Debug\OutInputSystem.Form1.resources
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\obj\Debug\OutInputSystem.Properties.Resources.resources
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\obj\Debug\OutInputSystem.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\obj\Debug\OutInputSystem.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\obj\Debug\OutInputSystem.exe
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\obj\Debug\OutInputSystem.pdb
