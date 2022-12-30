@@ -28,57 +28,85 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.AddProductButton = new System.Windows.Forms.Button();
+            this.AddSalesManButton = new System.Windows.Forms.Button();
+            this.AddProcurementFormbutton = new System.Windows.Forms.Button();
+            this.addSellingButton = new System.Windows.Forms.Button();
+            this.searchSalesSellabutton = new System.Windows.Forms.Button();
+            this.searchStuckButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // AddProductButton
             // 
-            this.button1.Location = new System.Drawing.Point(35, 30);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 58);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "新增貨品";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AddProductButton.Location = new System.Drawing.Point(35, 30);
+            this.AddProductButton.Name = "AddProductButton";
+            this.AddProductButton.Size = new System.Drawing.Size(148, 58);
+            this.AddProductButton.TabIndex = 0;
+            this.AddProductButton.Text = "新增貨品";
+            this.AddProductButton.UseVisualStyleBackColor = true;
+            this.AddProductButton.Click += new System.EventHandler(this.AddProductButton_Click);
             // 
-            // button2
+            // AddSalesManButton
             // 
-            this.button2.Location = new System.Drawing.Point(35, 110);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(148, 58);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "新增銷售人員";
-            this.button2.UseVisualStyleBackColor = true;
+            this.AddSalesManButton.Location = new System.Drawing.Point(35, 110);
+            this.AddSalesManButton.Name = "AddSalesManButton";
+            this.AddSalesManButton.Size = new System.Drawing.Size(148, 58);
+            this.AddSalesManButton.TabIndex = 1;
+            this.AddSalesManButton.Text = "新增銷售人員";
+            this.AddSalesManButton.UseVisualStyleBackColor = true;
+            this.AddSalesManButton.Click += new System.EventHandler(this.AddSalesManButton_Click);
             // 
-            // button3
+            // AddProcurementFormbutton
             // 
-            this.button3.Location = new System.Drawing.Point(35, 188);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(148, 58);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "新增進貨資料";
-            this.button3.UseVisualStyleBackColor = true;
+            this.AddProcurementFormbutton.Location = new System.Drawing.Point(35, 188);
+            this.AddProcurementFormbutton.Name = "AddProcurementFormbutton";
+            this.AddProcurementFormbutton.Size = new System.Drawing.Size(148, 58);
+            this.AddProcurementFormbutton.TabIndex = 2;
+            this.AddProcurementFormbutton.Text = "新增進貨資料";
+            this.AddProcurementFormbutton.UseVisualStyleBackColor = true;
+            this.AddProcurementFormbutton.Click += new System.EventHandler(this.AddProcurementFormbutton_Click);
             // 
-            // button4
+            // addSellingButton
             // 
-            this.button4.Location = new System.Drawing.Point(35, 266);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(148, 58);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "新增出貨資料";
-            this.button4.UseVisualStyleBackColor = true;
+            this.addSellingButton.Location = new System.Drawing.Point(35, 266);
+            this.addSellingButton.Name = "addSellingButton";
+            this.addSellingButton.Size = new System.Drawing.Size(148, 58);
+            this.addSellingButton.TabIndex = 3;
+            this.addSellingButton.Text = "新增出貨資料";
+            this.addSellingButton.UseVisualStyleBackColor = true;
+            this.addSellingButton.Click += new System.EventHandler(this.addSellingButton_Click);
+            // 
+            // searchSalesSellabutton
+            // 
+            this.searchSalesSellabutton.Location = new System.Drawing.Point(208, 30);
+            this.searchSalesSellabutton.Name = "searchSalesSellabutton";
+            this.searchSalesSellabutton.Size = new System.Drawing.Size(163, 58);
+            this.searchSalesSellabutton.TabIndex = 4;
+            this.searchSalesSellabutton.Text = "查詢銷售人員出貨";
+            this.searchSalesSellabutton.UseVisualStyleBackColor = true;
+            this.searchSalesSellabutton.Click += new System.EventHandler(this.searchSalesSellabutton_Click);
+            // 
+            // searchStuckButton
+            // 
+            this.searchStuckButton.Location = new System.Drawing.Point(208, 110);
+            this.searchStuckButton.Name = "searchStuckButton";
+            this.searchStuckButton.Size = new System.Drawing.Size(163, 58);
+            this.searchStuckButton.TabIndex = 6;
+            this.searchStuckButton.Text = "查詢庫存總表";
+            this.searchStuckButton.UseVisualStyleBackColor = true;
+            this.searchStuckButton.Click += new System.EventHandler(this.searchStuckButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.searchStuckButton);
+            this.Controls.Add(this.searchSalesSellabutton);
+            this.Controls.Add(this.addSellingButton);
+            this.Controls.Add(this.AddProcurementFormbutton);
+            this.Controls.Add(this.AddSalesManButton);
+            this.Controls.Add(this.AddProductButton);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -87,10 +115,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button AddProductButton;
+        private System.Windows.Forms.Button AddSalesManButton;
+        private System.Windows.Forms.Button AddProcurementFormbutton;
+        private System.Windows.Forms.Button addSellingButton;
+        private System.Windows.Forms.Button searchSalesSellabutton;
+        private System.Windows.Forms.Button searchStuckButton;
     }
 }
 

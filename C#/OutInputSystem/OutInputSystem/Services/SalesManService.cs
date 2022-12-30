@@ -1,13 +1,13 @@
-﻿using BizDataLibrary.Models;
-using BizDataLibrary.Repositories;
-using BuildSchoolBizApp.ViewModels;
+﻿using OutInDataLibrary.Models;
+using OutInDataLibrary.Repositories;
+using OutInputSystem.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildSchoolBizApp.Services
+namespace OutInputSystem.Services
 {
     internal class SalesManService
     {
@@ -16,7 +16,7 @@ namespace BuildSchoolBizApp.Services
             var result = new OperationResult();
             try
             {
-                var repository = new BizRepository(new BizModel());
+                var repository = new OutInRepository(new OutInModel());
                 var entity = new SalesMan
                 { Name=input.Name };
                 repository.Create(entity);
@@ -41,12 +41,12 @@ namespace BuildSchoolBizApp.Services
         }
         public bool IsNameExist(SalesManViewModel input)
         {
-            var repository = new BizRepository(new BizModel());
+            var repository = new OutInRepository(new OutInModel());
             return repository.GetAll<SalesMan>().Any((x) => x.Name == input.Name);
         }
         public IEnumerable<SalesManViewModel> GetSalesMen()
         {
-            var repository = new BizRepository(new BizModel());
+            var repository = new OutInRepository(new OutInModel());
             foreach (var item in repository.GetAll<SalesMan>().OrderBy((x) => x.JobNumber))
             {
                 yield return new SalesManViewModel()

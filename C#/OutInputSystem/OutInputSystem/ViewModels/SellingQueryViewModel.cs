@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildSchoolBizApp.ViewModels
+namespace OutInputSystem.ViewModels
 {
     internal class SellingQueryViewModel
     {

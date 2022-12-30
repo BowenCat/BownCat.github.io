@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildSchoolBizApp.ViewModels
+namespace OutInputSystem.ViewModels
 {
-    internal class ProductViewModel
+    internal class ProductViewModel //for AddProductForm 
     {
         public string PartNo { get; set; }
         public string PartName { get; set; }

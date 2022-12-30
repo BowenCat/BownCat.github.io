@@ -1,13 +1,13 @@
-﻿using BizDataLibrary.Models;
-using BizDataLibrary.Repositories;
-using BuildSchoolBizApp.ViewModels;
+﻿using OutInDataLibrary.Models;
+using OutInDataLibrary.Repositories;
+using OutInputSystem.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildSchoolBizApp.Services
+namespace OutInputSystem.Services
 {
     internal class ProcurementService
     {
@@ -16,7 +16,7 @@ namespace BuildSchoolBizApp.Services
             var result = new OperationResult();
             try
             {
-                var repository = new BizRepository(new BizModel());
+                var repository = new OutInRepository(new OutInModel());
                 Procurement entity = new Procurement
                 {
                     PartNo = input.PartNo,
@@ -48,13 +48,13 @@ namespace BuildSchoolBizApp.Services
         }
         public int GetStock(string partNo)
         {
-            var repository = new BizRepository(new BizModel());
+            var repository = new OutInRepository(new OutInModel());
             return repository.GetAll<Procurement>().Where((x) => x.PartNo == partNo)
             .Sum(x => x.InvetoryQuantity);
         }
         public IEnumerable<InvetoryQueryViewModel> GetInventoryList()
         {
-            var repository = new BizRepository(new BizModel());
+            var repository = new OutInRepository(new OutInModel());
             var temp = from p in repository.GetAll<Product>()
                        join q in repository.GetAll<Procurement>()
                        on p.PartNo equals q.PartNo

@@ -9,3 +9,17 @@ C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\ob
 C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\obj\Debug\OutInputSystem.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\obj\Debug\OutInputSystem.exe
 C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\obj\Debug\OutInputSystem.pdb
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\obj\Debug\OutInputSystem.AddProductForm.resources
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\obj\Debug\OutInputSystem.AddSalesManForm.resources
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\bin\Debug\OutInDataLibrary.dll
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\bin\Debug\OutInDataLibrary.pdb
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\bin\Debug\OutInDataLibrary.dll.config
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\bin\Debug\EntityFramework.xml
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\obj\Debug\OutInputSystem.csproj.CopyComplete
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\obj\Debug\OutInputSystem.AddProcurementForm.resources
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\obj\Debug\OutInputSystem.AddSellingForm.resources
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\obj\Debug\OutInputSystem.QuerySellingBySalesForm.resources
+C:\Users\User\Desktop\Bowen\Program practise\C#\OutInputSystem\OutInputSystem\obj\Debug\OutInputSystem.QueryStockForm.resources

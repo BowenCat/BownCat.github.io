@@ -1,6 +1,6 @@
-﻿using BizDataLibrary.Models;
-using BizDataLibrary.Repositories;
-using BuildSchoolBizApp.ViewModels;
+﻿using OutInDataLibrary.Models;
+using OutInDataLibrary.Repositories;
+using OutInputSystem.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,12 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildSchoolBizApp.Services
+namespace OutInputSystem.Services
 {
     internal class SellingService
     {
-        private Selling CreateSelling(BizRepository repository, SellingViewModel input)
-        {
+        private Selling CreateSelling(OutInRepository repository, SellingViewModel input)
+        {   //哪位出貨
             Selling entity = new Selling()
             {
                 PartNo = input.PartNo,
@@ -26,9 +26,10 @@ namespace BuildSchoolBizApp.Services
             // 要先 SaveChanges 才能拿到新的 Selling.SellingId
             repository.SaveChanges();
             return entity;
-        }
-        private void CreateSellingSource(BizRepository repository, int sellingId,int procurementId, int sellCount)
-        {
+        }       
+        
+        private void CreateSellingSource(OutInRepository repository, int sellingId,int procurementId, int sellCount)
+        {   //新增出貨紀錄(從哪次進貨做出貨)
             SellingSource sellingSource = new SellingSource()
             {
                 ProcurementId = procurementId,
@@ -37,8 +38,8 @@ namespace BuildSchoolBizApp.Services
             };
             repository.Create(sellingSource);
         }
-        private void ComputeInvetory(BizRepository repository, SellingViewModel input)
-        {
+        private void ComputeInvetory(OutInRepository repository, SellingViewModel input)
+        {   //按先進先出扣除庫存
             Selling entity = CreateSelling(repository, input);
             var sellCount = input.Quantity;
             var products = repository.GetAll<Procurement>()
@@ -71,12 +72,12 @@ namespace BuildSchoolBizApp.Services
         public OperationResult Create(SellingViewModel input)
         {
             var result = new OperationResult();
-            DbContext context = new BizModel();
+            DbContext context = new OutInModel();
             using (var transaction = context.Database.BeginTransaction())
             {
                 try
                 {
-                    var repository = new BizRepository(context);
+                    var repository = new OutInRepository(context);
                     ComputeInvetory(repository, input);
                     repository.SaveChanges();
                     result.IsSuccessful = true;
@@ -93,7 +94,7 @@ namespace BuildSchoolBizApp.Services
         }
         public IEnumerable<SellingQueryViewModel> GetSellingBySalesAndDay(int jobNumber, DateTime begin, DateTime end)
         {
-            var repository = new BizRepository(new BizModel());
+            var repository = new OutInRepository(new OutInModel());
             return from selling in repository.GetAll<Selling>()
                    join sales in repository.GetAll<SalesMan>()
                    on selling.SalesJobNumber equals sales.JobNumber

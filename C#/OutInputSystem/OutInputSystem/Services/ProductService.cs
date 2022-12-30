@@ -1,5 +1,5 @@
 ﻿
-using BuildSchoolBizApp.ViewModels;
+using OutInputSystem.ViewModels;
 using OutInDataLibrary.Models;
 using OutInDataLibrary.Repositories;
 using System;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildSchoolBizApp.Services
+namespace OutInputSystem.Services
 {
     internal class ProductService
     {
@@ -41,7 +41,7 @@ namespace BuildSchoolBizApp.Services
             }
             return result;
         }
-        public IEnumerable<ProductViewModel> GetProducts()
+        public IEnumerable<ProductViewModel> GetProducts()//Procurement需要全產品資料
         {
             var repository = new OutInRepository(new OutInModel());
             foreach (var item in repository.GetAll<Product>().OrderBy((x) => x.PartNo))
