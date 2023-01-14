@@ -20,8 +20,10 @@ namespace interface_abstract
             
         }
 
-        public abstract class Duck
-        {
+        public abstract class Duck  //抽象類別能繼承介面 但介面不能繼承抽象類別
+        {                           //動物是個概念(抽象類別) 貓是實體(類別)
+                                    //植物是個概念(抽象類別) 竹子是實體(類別)
+                                    //生長是共同行為(介面) 不是因為會生長所以才是動物或植物 而是因為是動物或植物才會生長
             // 抽象方法不可使用 Private
             public abstract void Swim(); //繼承的子類別要實作所有「抽象」辦法
             
@@ -29,6 +31,8 @@ namespace interface_abstract
             {
                 Console.WriteLine("I belong to Duck.");
             }
+
+            
         }
 
         // 塑膠鴨
@@ -62,7 +66,8 @@ namespace interface_abstract
 
         private static void Main(string[] args)
         {
-            //Duck duck = new Duck(); // [錯誤]無法建立抽象類別的執行個體
+            //Duck duck = new Duck();   // [錯誤]無法建立抽象類別的執行個體
+            //                          //動物是個概念 不具指定性「幫我餵動物...是指天上的鳥?路上的狗?海裡的魚?」
             RubberDuck rubberDuck = new RubberDuck();
             Swan swan = new Swan();
             rubberDuck.Swim();
